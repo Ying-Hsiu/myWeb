@@ -1,0 +1,34 @@
+@font-face {
+  font-family:'orange kid';
+  src: url(orange_kid.ttf);
+}
+
+*{
+	margin: 0 0;
+	padding:0 0;
+}
+html,body{
+	text-align: center;
+	font-family: 'orange kid';
+	color: #666;
+}
+
+#cvs{
+	-webkit-filter: grayscale(50%);
+	
+}
+#cvs:active{
+	cursor: url('http://www.snazzyspace.com/cursorsfolder/mickey-big-pointer.png'),default;
+
+}
+#cvs:hover{
+	cursor: url('http://www.snazzyspace.com/cursorsfolder/mickey-big-pointer.png'),default;
+}
+
+#cvs_2:active{
+	cursor: url('../images/Phoenix_quill_pen.png'),default;
+
+}
+#cvs_2:hover{
+	cursor: url('../images/Phoenix_quill_pen.png'),default;
+}

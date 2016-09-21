@@ -1,20 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <style>
-      a{
-          display: block;
-      }
-      </style>
-    <title>Myweb by Ying-Hsiu</title>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cerebrum Space</title>
+  <link rel="stylesheet" href="./plugin/todc-bootstrap/css/bootstrap.min.css">
+  <script src="./plugin/jquery/jquery-2.2.3.min.js" charset="UTF-8"></script>
+  <script src="./plugin/todc-bootstrap/js/bootstrap.min.js" charset="UTF-8"></script>
+  <script src="./plugin/masonry/masonry.pkgd.min.js" charset="UTF-8"></script>
+  <style>
+    .grid-sizer,
+    .grid-item {
+      width: 33.3333%;
+    }
 
-  <body>
-      <a href="htc.html">計算機（htc, kitty, owl)</a>
-      <a href="icons.html">icons</a>
-      <a href="post.html">備忘欄</a>
-      <a href="FBsearch/index.html">搜尋巴豆妖</a>
-      <a href="ShakeGame/index.html">Make Your Drink! 做你自己的飲料</a>
-  </body>
+    .grid-item {
+      padding: 3px 3px; 
+      border-radius: 3px 3px;
+      float: left;
+    }
+
+    .grid-item img {
+      padding: 3px 3px; 
+      border: 1px solid #ccc;
+      display: block;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center">
+    <img alt="Cerebrum Space" src="./images/logo.png" width="300">
+    <nav class="navbar" role="navigation">
+        <ul class="nav navbar"> 
+          <li class="active"><a href="#">Web Application</a></li> 
+          <li><a href="#">webic Design</a></li>
+        </ul>  
+    </nav>
+  </header>
+  <main class="col-xs-8 col-md-8 col-xs-offset-2 col-md-offset-2">
+    <div class="grid">
+        <div class="grid-sizer"></div>
+      <div class="grid-item">
+        <a href="http://hungry.9ifriend.com/eBook/"><img alt="校園美食圖鑑" src="./images/web/web(4).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="http://www.nknu.edu.tw/~randd/EIGP/aboutUs.html"><img alt="國際工程學程" src="./images/web/web(2).png"></a>
+      </div>
+<!--       <div class="grid-item">
+        <a href="#"><img alt="OTA" src="./images/web/web(3).png"></a>
+      </div> -->
+      <div class="grid-item">
+        <a href="ShakeGame/index.html"><img alt="" src="./images/web/web(10).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="Protector/index.html"><img alt="" src="./images/web/web(5).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="MemoPost/post.html"><img alt="備忘錄" src="./images/web/web(6).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="calculator/calculator.html"><img alt="" src="./images/web/web(7).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="http://www.nknu.edu.tw/~randd/chinese/index.html"><img alt="研發處" src="./images/web/web(1).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="lightningTalk/lightningTalk.html"><img alt="" src="./images/web/web(8).png"></a>
+      </div>
+<!--       <div class="grid-item">
+        <a href="#"><img alt="" src="./images/web/web(9).png"></a>
+      </div> -->
+      <div class="grid-item">
+        <a href="switch/switch.html"><img alt="" src="./images/web/web(11).png"></a>
+      </div>
+    </div>  
+  </main>
+  <footer class="col-xs-12 col-md-12">
+    <p>Copyright © 2016 by Ying-Hsiu</p>
+  </footer>
+  <script>
+    // init Masonry
+    var $grid = $('.grid').masonry({
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      columnWidth: '.grid-sizer'
+    });
+    // layout Isotope after each images loads
+    $grid.imagessLoaded().progress( function() {
+      $grid.masonry();
+    });  
+  </script>
+</body>
 </html>

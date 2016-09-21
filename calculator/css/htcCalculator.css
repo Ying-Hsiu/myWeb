@@ -1,0 +1,135 @@
+*{
+	font-family: "consolas";
+	font-size: 23px;
+	float: left;
+	color: #FFF;
+}
+html,body{
+	background: #666;
+	text-align: center;
+	margin: 0 auto;
+}
+
+select{
+	position: absolute;
+	right: 10px;
+	font-size: 15px;
+	color: blue;
+}
+option{
+	font-size: 15px;
+	float: none;
+}
+
+
+#calculator {
+	position: relative;
+	width: 288px;
+	height: auto;
+	background: #CCC;
+}
+
+#outscreen {
+	z-index: -2;
+	width: 288px;
+	height: 60px;
+	padding-top: 30px;
+	background: #101010;
+	border-bottom: 2px solid #666;
+}
+
+#screen{
+	z-index: -1;
+	top: 0px;
+	font-size: 18pt;
+	font-family: 'Agency FB';
+	height: 30px;
+	width: 268px;
+	line-height: 60px;
+	text-align: right;
+	padding-bottom: 5px;
+	margin-top: 0px;
+}
+
+.CtoT{
+	-webkit-animation-name:'CtoT';
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 0.8s;
+}
+
+.BtoC{
+	-webkit-animation-name:'BtoC';
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 0.5s;
+	color: #0033CC;
+}
+
+#line{
+	font-size: 25pt;
+	font-family: 'Agency FB';
+	height: 55px; 
+	text-align: right;
+	line-height: 55px;
+	border:none;
+	border-right: 1px solid #FFF;
+}
+
+.focus{
+	-webkit-animation-name:'focus';
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 1.2s;
+}
+
+@-webkit-keyframes focus {
+	0% {border-right: none;}
+	50% {border-right: 1px solid #FFF;}
+	100% {border-right: none;}
+}
+
+@-webkit-keyframes CtoT {
+	0% {margin-top: 0px; opacity: 1;}
+	50% {margin-top: -75px; opacity: 1;}
+	100% {margin-top: -150px; opacity: 1;}
+}
+
+@-webkit-keyframes BtoC {
+	0% {margin-top: 20px; opacity: 1;}
+	100% {margin-top: 0px; opacity: 1;}
+}
+
+
+span {
+	margin: 0;
+	color: #f3f4f6;
+	cursor: pointer;
+	font-family: 'Agency FB';
+	width: 70px;
+	height:70px;
+	line-height: 70px;
+	text-align: center;
+	background: linear-gradient(#303030,#282828);
+	border: 1px solid #101010;
+	box-shadow: 0.1px 0.1px 0.1px #404040;
+}
+
+span.op,span#delete {
+	color: #666;
+	z-index: 1;
+	background: linear-gradient(#202020,#181818);
+}
+
+span#clear {
+	z-index: 1;
+	background: linear-gradient(#202020,#181818);
+	font-family: "華康粗黑體";
+	color: #666;
+	font-size: 16px;
+	width: 189px;
+	text-align: left;
+	padding-left: 25px;
+}
+
+span.elsb,span.mb{
+	display: none;
+}
+
