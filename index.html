@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./plugin/todc-bootstrap/css/bootstrap.min.css">
   <script src="./plugin/jquery/jquery-2.2.3.min.js" charset="UTF-8"></script>
   <script src="./plugin/todc-bootstrap/js/bootstrap.min.js" charset="UTF-8"></script>
+  <script src="./plugin/imagesLoaded/imagesloaded.pkgd.min.js" charset="UTF-8"></script>
   <script src="./plugin/masonry/masonry.pkgd.min.js" charset="UTF-8"></script>
   <style>
     .grid-sizer,
@@ -86,7 +87,7 @@
       columnWidth: '.grid-sizer'
     });
     // layout Isotope after each images loads
-    $grid.imagessLoaded().progress( function() {
+    $grid.imagesLoaded().progress( function() {
       $grid.masonry();
     });  
   </script>
