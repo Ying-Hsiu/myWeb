@@ -15,7 +15,7 @@ var CreatePanel = React.createClass({
         this.setState({selectbg : event.target.value}); 
     },
     handleClick: function(){
-        alert("新增備忘便利條");
+        React.render(<StickyNote/>,document.getElementById('Notes'));
     }, 
     render: function() {
         

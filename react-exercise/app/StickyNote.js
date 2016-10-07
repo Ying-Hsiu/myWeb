@@ -10,14 +10,23 @@ var StickyNote = React.createClass({
 
         };
     },
-    handleClick: function(){
+    moveNote: function(){
     	//雙擊可撕起
+        alert("撕起");
+    },
+    editNote: function(){
+        //點擊進行編輯
+        alert("編輯");
     },
     render : function() {
-        return (
-            /* jshint ignore: start*/
-            <div className='post'></div>
-            /* jshint ignore: end*/
+        var d = new Date(),
+            noteID = d.getTime();
+
+        return ( 
+            <div className='post' id={noteID} ondbClick={this.handledbClick} >
+                <span id='edit' onClick={this.editNote} >E</span>
+                <span id='move' onClick={this.moveNote} >M</span>
+            </div>
         );
     }
 });

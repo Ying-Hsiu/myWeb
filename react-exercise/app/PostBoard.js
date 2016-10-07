@@ -4,17 +4,10 @@
 
 var React = require('react');
 var CreatePanel = require('./CreatePanel');
-var TrashCan = require('./TrashCan');
-
+var notes = {};//這裡要取得localhost所有的notes資料
 var PostBoard = React.createClass({
 	getInitialState : function() {
     	return { showModal: false };
-	},
-	close : function() {
-	  	this.setState({ showModal: false });
-	},
-	open : function() {
-	  	this.setState({ showModal: true });
 	},
 	createNote : function(){
 		alert('create new sticky note!');
@@ -27,7 +20,6 @@ var PostBoard = React.createClass({
             	<button className="CreateNote tool" data-toggle="modal" data-target="#test" onClick={this.changeModalState} >ADD+</button>
             	<button className="ClearAll tool" onClick={this.changeModalState} >CLEAR</button>
             	<CreatePanel />
-            	<TrashCan />
             </div>
             /* jshint ignore: end*/
         );
