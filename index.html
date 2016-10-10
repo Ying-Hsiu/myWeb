@@ -4,92 +4,185 @@
   <meta charset="UTF-8">
   <title>Cerebrum Space</title>
   <link rel="stylesheet" href="./plugin/todc-bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="./plugin/jquery/jquery-2.2.3.min.js" charset="UTF-8"></script>
   <script src="./plugin/todc-bootstrap/js/bootstrap.min.js" charset="UTF-8"></script>
   <script src="./plugin/imagesLoaded/imagesloaded.pkgd.min.js" charset="UTF-8"></script>
   <script src="./plugin/masonry/masonry.pkgd.min.js" charset="UTF-8"></script>
-  <style>
-    .grid-sizer,
-    .grid-item {
-      width: 33.3333%;
-    }
-
-    .grid-item {
-      padding: 3px 3px; 
-      border-radius: 3px 3px;
-      float: left;
-    }
-
-    .grid-item img {
-      padding: 3px 3px; 
-      border: 1px solid #ccc;
-      display: block;
-      max-width: 100%;
-    }
-  </style>
 </head>
 <body>
   <header class="text-center">
     <img alt="Cerebrum Space" src="./images/logo.png" width="300">
     <nav class="navbar" role="navigation">
-        <ul class="nav navbar"> 
-          <li class="active"><a href="#">Web Application</a></li> 
-          <li><a href="#">webic Design</a></li>
+        <ul class="nav navbar-nav nav-center"> 
+          <li><a href="#">Web Application</a></li> 
+          <li><a href="#">Web Exercise</a></li>
+          <!-- <li><a href="#">Graphic Design</a></li> -->
         </ul>  
     </nav>
   </header>
   <main class="col-xs-8 col-md-8 col-xs-offset-2 col-md-offset-2">
-    <div class="grid">
-        <div class="grid-sizer"></div>
+    <div id="WebContent" class="grid">
+      <div class="grid-sizer"></div>
+
       <div class="grid-item">
-        <a href="http://hungry.9ifriend.com/eBook/"><img alt="校園美食圖鑑" src="./images/web/web(4).png"></a>
+        <a href="http://hungry.9ifriend.com/eBook/" target="_blank">
+          <div class="grid-content">
+            <h1>校園美食圖鑑</h1>
+            <p>以電子書形式呈現，南區大專院校美食指南。</p>
+          </div>
+          <img alt="校園美食圖鑑" src="./images/web/web(4).png">
+        </a>
       </div>
       <div class="grid-item">
-        <a href="http://www.nknu.edu.tw/~randd/EIGP/aboutUs.html"><img alt="國際工程學程" src="./images/web/web(2).png"></a>
-      </div>
-<!--       <div class="grid-item">
-        <a href="#"><img alt="OTA" src="./images/web/web(3).png"></a>
-      </div> -->
-      <div class="grid-item">
-        <a href="ShakeGame/index.html"><img alt="" src="./images/web/web(10).png"></a>
-      </div>
-      <div class="grid-item">
-        <a href="Protector/index.html"><img alt="" src="./images/web/web(5).png"></a>
+        <a href="ShakeGame/index.html" target="_blank">
+          <div class="grid-content">
+            <h1>Make Drink 自己的飲料自己做</h1>
+            <p>選擇三種材料，創造出獨一無二的絕妙新滋味。</p>
+          </div>
+          <img alt="Make Drink" src="./images/web/web(10).png">
+        </a>
       </div>
       <div class="grid-item">
-        <a href="MemoPost/post.html"><img alt="備忘錄" src="./images/web/web(6).png"></a>
+        <a href="http://www.nknu.edu.tw/~randd/EIGP/aboutUs.html" target="_blank">
+          <div class="grid-content">
+            <h1>EIGP-國際工程學程網站</h1>
+            <p>國際工程學程招生網站。</p>
+          </div>
+          <img alt="國際工程學程" src="./images/web/web(2).png">
+        </a>
       </div>
       <div class="grid-item">
-        <a href="calculator/calculator.html"><img alt="" src="./images/web/web(7).png"></a>
+        <a href="http://www.nknu.edu.tw/~randd/chinese/index.html" target="_blank">
+          <div class="grid-content">
+            <h1>高師大-研究發展處</h1>
+            <p>首次接洽的網頁開發工作。</p>
+          </div>
+          <img alt="研發處" src="./images/web/web(1).png">
+        </a>
+      </div>
+    </div>
+    
+    <div id="ExerContent" class="grid hidden">
+      <div class="grid-sizer"></div>
+      <div class="grid-item">
+        <a href="Protector/index.html" target="_blank">
+          <div class="grid-content">
+            <h1>守護地球 Canvas Game</h1>
+            <p>透過移動滑鼠來彈開襲向地球的隕石。</p>
+          </div>
+          <img alt="守護地球" src="./images/web/web(5).png">
+        </a>
       </div>
       <div class="grid-item">
-        <a href="http://www.nknu.edu.tw/~randd/chinese/index.html"><img alt="研發處" src="./images/web/web(1).png"></a>
+        <a href="MemoPost/post.html" target="_blank">
+          <div class="grid-content">
+            <h1>POST! 網頁便利貼</h1>
+            <p>記錄每日Todo，代辦事項一目瞭然。</p>
+          </div>
+          <img alt="網站便利貼" src="./images/web/web(6).png">
+        </a>
       </div>
       <div class="grid-item">
-        <a href="lightningTalk/lightningTalk.html"><img alt="" src="./images/web/web(8).png"></a>
+        <a href="calculator/calculator.html" target="_blank">
+          <div class="grid-content">
+            <h1>Penguin/hTC Calculator</h1>
+            <p>透過替換CSS來改變計算機外觀。</p>
+          </div>
+          <img alt="" src="./images/web/web(7).png">
+        </a>
       </div>
-<!--       <div class="grid-item">
-        <a href="#"><img alt="" src="./images/web/web(9).png"></a>
-      </div> -->
       <div class="grid-item">
-        <a href="switch/switch.html"><img alt="" src="./images/web/web(11).png"></a>
+        <a href="lightningTalk/lightningTalk.html" target="_blank">
+          <div class="grid-content">
+            <h1>LightningTalk 計時器</h1>
+            <p>嘗試以Html5製作的web版計時器。</p>
+          </div>
+          <img alt="LightningTalk" src="./images/web/web(8).png">
+        </a>
       </div>
-    </div>  
+      <div class="grid-item">
+        <a href="switch/switch.html" target="_blank">
+          <div class="grid-content">
+            <h1>Switch 開關</h1>
+            <p>參考Alex Cican 製作的 Light Switch，仿製的電燈開關。</p>
+          </div>
+          <img alt="" src="./images/web/web(11).png">
+        </a>
+      </div>
+    </div>
+
+    <!-- <div id="GraphicContent" class="grid hidden">
+      <div class="grid-sizer"></div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(4).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(2).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(10).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(5).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(6).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(7).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(1).png"></a>
+      </div>
+      <div class="grid-item">
+        <div class="grid-content">
+          <h1>Title</h1>
+          <p>Description</p>
+        </div>
+        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(8).png"></a>
+      </div>
+      <div class="grid-item">
+        <a href="" target="_blank"><img alt="" src="./images/pic/pic(11).png"></a>
+      </div>
+    </div>   -->
+
+ 
+
   </main>
-  <footer class="col-xs-12 col-md-12">
+  <footer class="col-xs-12 col-md-12 text-center">
+    <br>
+    <br>
     <p>Copyright © 2016 by Ying-Hsiu</p>
   </footer>
-  <script>
-    // init Masonry
-    var $grid = $('.grid').masonry({
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      columnWidth: '.grid-sizer'
-    });
-    // layout Isotope after each images loads
-    $grid.imagesLoaded().progress( function() {
-      $grid.masonry();
-    });  
-  </script>
+  <script src="./js/main.js" charset="UTF-8"></script>
 </body>
 </html>
