@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>POST!</title>
+	<script src="../dist/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../dist/bower_components/vue/dist/vue.js"></script>
+	
+	<link rel="stylesheet" href="../dist/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../dist/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="../dist/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+	<script src="../dist/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	
+	<link rel="stylesheet" href="../dist/bower_components/sweetalert2/dist/sweetalert2.min.css">
+	<script src="../dist/bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+	
+	<link rel="stylesheet" href="../dist/bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/post_style.css">
+	<script type="text/javascript">
+		document.onselectstart= function(){
+			return false;
+		}
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+</head>
+<body>
+	<div id="app">	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-2 text-center" id="menu_bar">
+					<h1>POST!</h1>
+					<button class="btn btn-option text-uppercase" data-toggle="modal" data-target=".addPostModal" @click="reset()">add post</button>
+					<button class="btn btn-option text-uppercase" @click="clear()">clear board</button>
+				</div>
+				<div class="col-md-10 col-sm-10" id="post_board">
+					<template v-for="data in list">
+						<div class="post" 
+						:id="data.id" 
+						:color="data.color" 
+						:style="{ left: data.locX, top: data.locY}">
+							<div class="date">{{data.date}}</div>
+							<div class="content">{{data.content}}</div>
+							<div class="option">
+								<i class="fa fa-trash-o" aria-hidden="true" @click="remove(data.id)"></i>
+								<i class="fa fa-pencil" aria-hidden="true" @click="edit(data.id)" data-toggle="modal" data-target=".editPostModal"></i>
+								<i class="fa fa-arrows" aria-hidden="true" @click="move(data.id)"></i>
+							</div>
+						</div>
+					</template>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade in addPostModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title text-uppercase">add post</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group">
+			    		<label>日期</label>
+						<input class="form-control datepicker" v-model="post.date" >
+						<label>待辦事項</label>
+						<textarea class="form-control" rows="3" v-model="post.content"></textarea>
+			    	</div>
+			    	<div class="form-group">
+						<label class="label-control">顏色</label>
+						<div class="form-group">
+							<label class="radio-inline">
+							  <input type="radio" name="post_color" class="color" value="yellow" v-model="post.color"><label color="yellow" for=""></label>
+							</label>
+
+							<label class="radio-inline">
+							  <input type="radio" name="post_color" class="color" value="red" v-model="post.color"><label color="red" for=""></label>
+							</label>
+
+							<label class="radio-inline">
+							  <input type="radio" name="post_color" class="color" value="blue" v-model="post.color"><label color="blue" for=""></label>
+							</label>
+
+							<label class="radio-inline">
+							  <input type="radio" name="post_color" class="color" value="green" v-model="post.color"><label color="green" for=""></label>
+							</label>
+						</div>
+			    	</div>
+				</div>
+
+				<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" @click="add">POST</button>
+				</div>
+				
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade in editPostModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title text-uppercase">edit post</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group">
+			    		<label>日期</label>
+						<input class="form-control datepicker" v-model="post.date">
+						<label>待辦事項</label>
+						<textarea class="form-control" rows="3" v-model="post.content"></textarea>
+			    	</div>
+			    	<div class="form-group">
+						<label class="label-control">顏色</label>
+						<div class="form-group">
+							<label class="radio-inline">
+							  <input type="radio" name="edit_post_color" class="color" value="yellow" v-model="post.color"><label color="yellow" for=""></label>
+							</label>
+
+							<label class="radio-inline">
+							  <input type="radio" name="edit_post_color" class="color" value="red" v-model="post.color"><label color="red" for=""></label>
+							</label>
+
+							<label class="radio-inline">
+							  <input type="radio" name="edit_post_color" class="color" value="blue" v-model="post.color"><label color="blue" for=""></label>
+							</label>
+
+							<label class="radio-inline">
+							  <input type="radio" name="edit_post_color" class="color" value="green" v-model="post.color"><label color="green" for=""></label>
+							</label>
+						</div>
+			    	</div>
+				</div>
+
+				<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" @click="update()">Done</button>
+				</div>
+				
+		    </div>
+		  </div>
+		</div>	
+	</div>
+	
+<script type="text/javascript" src="./js/post_main.js"></script>
+</body>
+</html>

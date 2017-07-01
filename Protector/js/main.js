@@ -3,6 +3,7 @@ var ctx = cvs.getContext('2d');*/
 var cvs_2 = document.getElementById('cvs_2');
 var ctx_2 = cvs_2.getContext('2d');
 var colors=["#75c6e1","#46b847","#a7af38","#eadd12","#f3ab23","#fc902d","#dfcadd","#d673b3","#ef3a27","#372974","#3146a1","#329cd6"];
+
 var startGame = false;
 var r = 50;//地球的半徑
 var stonesBox = new Array();
@@ -285,7 +286,7 @@ var direY=[1,-1,1,1]
 function createStone(num){
     var locX=[Math.floor(Math.random()*400),Math.floor(Math.random()*400),0,400];
     var locY=[0,400,Math.floor(Math.random()*400),Math.floor(Math.random()*400)];
-    var color=['#006633','#993333','#FFFFFF'];
+    var color = ["#F1F6F8","#B9D4F1","#F1E58A"];
     var ballnum=0;
     for(var i=0;i<num;i++){
         //top bottom left right
@@ -293,7 +294,7 @@ function createStone(num){
         var ran = Math.floor(Math.random()*4);
         var tempX = locX[ran];
         var tempY = locY[ran];
-        var tempColor = color[Math.floor(Math.random()*2)];
+        var tempColor = color[Math.floor(Math.random()*3)];
         var tempSize = Math.random()*5+10;
         var t_d_x = speed*direX[ran];
         var t_d_y = speed*direY[ran];  
@@ -432,191 +433,11 @@ function start(){
         createBall(12);
         title=setInterval(function(){
         moveBall();
-        text('#FFF','→ Press \'ENTER\' key to start game ←',75,348,'12pt');
-        text('#C30','THE EARTH',90,100,'32pt');
-        text('#C30','DEEP IMPACT',160,120,'12pt');
-        text('#FFF','Difficulty Level: '+level,130,200,'12pt');
+        text('#FFF','→ Press \' ENTER \' key to start game ←',75,348,'12pt');
+        text('#6A759B','THE EARTH',90,100,'32pt');
+        text('#6A759B','DEEP IMPACT',160,120,'12pt');
+        text('#FFF','Difficulty Level: '+level,125,200,'12pt');
     },100);
 }
 var j = start();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//時鐘
-
-function clockBg(){
-    
-    var angle=90;
-        ctx.beginPath();
-        ctx.fillStyle='#000';
-        ctx.arc(0,0,150,0,2*Math.PI);
-        ctx.fill();
-    for(var i=0;i<colors.length;i++){
-        ctx.beginPath();
-        ctx.fillStyle=colors[i];
-        ctx.lineWidth=='3';
-        ctx.arc(0+150*Math.cos(degreeToRadias(angle)),0-150*Math.sin(degreeToRadias(angle)),39,0,2*Math.PI);
-        angle-=30;
-        ctx.fill(); 
-    }
-}
-
-function degreeToRadias(degree){
-    return (Math.PI/180)*degree;
-}
-
-function drawHand(size,thickness){
-    ctx.shadowColor = '#555';
-    ctx.shadowBlur = 10;
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 2;
-
-
-    thickness = thickness||4;
-    ctx.beginPath();
-    ctx.moveTo(0,0);
-    ctx.lineTo(thickness*-1,-10);
-    ctx.lineTo(0,size*-1);
-    ctx.lineTo(thickness,-10);
-    ctx.lineTo(0,0);
-    ctx.fill();
-}
-
-function secondHand(theDate){
-    ctx.save();
-    var second = theDate.getSeconds();
-
-    ctx.fillStyle = 'red';
-
-    ctx.rotate(degreeToRadias(second*6));
-
-    drawHand(120);
-    ctx.restore();
-}
-
-function minuiteHand(theDate){
-    var minutes = theDate.getMinutes() + theDate.getSeconds()/60;
-
-    ctx.save();
-    ctx.fillStyle='white';
-    ctx.rotate(degreeToRadias(minutes*6));
-    drawHand(100);
-    ctx.restore();
-}
-
-function hourHand(theDate){
-    var hours = theDate.getHours()+theDate.getMinutes()/60;
-    var degrees = (hours*360/12)
-    
-    ctx.save();
-    ctx.fillStyle='white';
-    ctx.rotate(degreeToRadias(degrees));//從基準點旋轉
-    drawHand(80,7);
-    ctx.restore();
-}
-function pendulum(angle){
-        ctx.fillStyle="#C30";
-        ctx.beginPath();
-        ctx.arc(0+260*Math.cos(degreeToRadias(angle)),0-260*Math.sin(degreeToRadias(angle)),15,0,2*Math.PI);
-        ctx.fill();
-        setTimeout(function(){
-            ctx.fillStyle="#CCC";
-            ctx.beginPath();
-            ctx.arc(0+260*Math.cos(degreeToRadias(angle)),0-260*Math.sin(degreeToRadias(angle)),16,0,2*Math.PI);
-            ctx.fill();
-        },100/6);
-
-       
-}
-function drawClock(){
-    ctx.clearRect(-300,-300,cvs.width,cvs.height);
-    //需要取得時間
-    var theDate = new Date();
-    clockBg();
-    hourHand(theDate);
-    minuiteHand(theDate);
-    secondHand(theDate);
-}
-
-function clockApp(){
-        ctx.translate(200,200);
-        drawClock();
-        setInterval('drawClock()', 1000);
-        
-}
-var i = setInterval(clockApp(),300);*/
-/*
-var i =0;
-//文字陰影
-ctx.shadowOffsetX = 5;
-ctx.shadowOffsetY = 5;   
-ctx.shadowBlur = 10;
-
-
-var colorText = function(){
-    if(i>2){
-        i=0;
-        ctx.clearRect(0,0,cvs.width, cvs.height);
-    }
-    ctx.font="25 bold 華康飾藝體";
-    ctx.strokeText('測試文字', 100, 100);
-    ctx.fillStyle="purple";
-    ctx.shadowColor="#C30";
-    ctx.fillText('HTML5從零開始', 100, 200);
-    i++;
-}
-var i = setInterval(function(){colorText();},300);
-*/
-
-
-/*
-//移動的黑球
-var x=0;
-var right=true;
-
-function moveBall(){
-    if(x==cvs.width){
-        right=false;
-    }
-    else if(x==0){
-        right=true;
-    }
-
-    if(right){
-        ctx.clearRect(0,0,cvs.width,cvs.height);
-        ctx.beginPath();
-        ctx.arc(x,150,10,0,2*Math.PI);
-        ctx.stroke();
-        ctx.fill();
-        x+=10;
-    }
-    else{
-        ctx.clearRect(0,0,cvs.width,cvs.height);
-        ctx.beginPath();
-        ctx.arc(x,150,10,0,2*Math.PI);
-        ctx.stroke();
-        ctx.fill();
-        x-=10;
-    }
-
-}
-*/
-//var i = setInterval(function(){moveBall();},50);
-    
 

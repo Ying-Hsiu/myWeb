@@ -19,6 +19,7 @@ body{
 	margin-left: -420px;
 	border:20px solid #ffcc33;
 }
+
 #postPanel{
 	z-index: -1;
 	width: 800px ;

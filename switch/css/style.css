@@ -4,6 +4,7 @@
 	font-family: 'Varela Round', sans-serif;
 }
 body{
+	height: 100vh;
 	background: #333;
 }
 .switch{

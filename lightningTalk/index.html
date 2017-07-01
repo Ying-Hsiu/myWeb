@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Lightning Talk</title>
+	<script type="text/javascript">
+		document.onselectstart=function(){
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<div id="timer">
+		<div id="big"></div>
+		<div id="mini"></div>
+	</div>
+
+	<div id="content">
+		<div class="block" id="one" style="left: 130px; top: 130px; z-index:10;">
+			<span id="square" class="white">
+				<span class="min">1</span>
+				<br>
+				<span class="sec"></span>
+				<br>
+				<img src="bell.png">
+			</span>
+			<span id="diamond" class="white"></span>
+		</div>
+		<div class="block" id="two" style="left: 350px;
+	top: 130px;z-index:7;">
+			<span id="square" class="green">
+				<span class="min">0</span>
+				<br>
+				<span class="sec">:45</span>
+				<br>
+				<img src="bell_w.png">
+			</span>
+			<span id="diamond" class="green"></span>
+		</div>
+		<div class="block" id="thr" style="left: 570px;
+	top: 130px;z-index:5;">
+			<span id="square" class="yellow">
+				<span class="min">0</span>
+				<br>
+				<span class="sec">:30</span>
+				<br>
+				<img src="bell.png">
+			</span>
+			<span id="diamond" class="yellow"></span>
+		</div>
+		<div class="block" id="fou" style="left: 790px;
+	top: 130px;z-index:3;">
+			<span id="square" class="red">
+				<span class="min">0</span>
+				<br>
+				<span class="sec">:15</span>
+				<br>
+				<img src="bell_w.png">
+			</span>
+			<span id="diamond" class="red"></span>
+		</div>
+		<span id="buttons_p"><span id="pause"></span></span>
+		<span id="buttons_q"><span id="quit"></span></span>
+		<span id="buttons_s"><span id="start"></span></span>
+		<span id="buttons_rs"><span id="start"></span></span>
+	</div>
+
+
+	
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

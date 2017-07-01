@@ -1,188 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cerebrum Space</title>
-  <link rel="stylesheet" href="./plugin/todc-bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="./plugin/jquery/jquery-2.2.3.min.js" charset="UTF-8"></script>
-  <script src="./plugin/todc-bootstrap/js/bootstrap.min.js" charset="UTF-8"></script>
-  <script src="./plugin/imagesLoaded/imagesloaded.pkgd.min.js" charset="UTF-8"></script>
-  <script src="./plugin/masonry/masonry.pkgd.min.js" charset="UTF-8"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Cerebrum Space</title>
+	<link rel="stylesheet" href="/dist/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/dist/bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/dist/bower_components/animate.css/animate.min.css">
+	<link rel="stylesheet" href="/dist/css/main.css">
+	<script src="/dist/bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-  <header class="text-center">
-    <img alt="Cerebrum Space" src="./images/logo.png" width="300">
-    <nav class="navbar" role="navigation">
-        <ul class="nav navbar-nav nav-center"> 
-          <li><a href="#">Web Application</a></li> 
-          <li><a href="#">Web Exercise</a></li>
-          <!-- <li><a href="#">Graphic Design</a></li> -->
-        </ul>  
-    </nav>
-  </header>
-  <main class="col-xs-8 col-md-8 col-xs-offset-2 col-md-offset-2">
-    <div id="WebContent" class="grid">
-      <div class="grid-sizer"></div>
+	<header>
+		<ul class="nav">
+			<li id="list-aboutme"><a href="#">關於作者</a></li>
+			<li id="list-works"><a href="#">作品展示</a></li>
+		</ul>
+	</header>
+	<section id="home">
+		<div class="slogan text-center col-md-12">
+		  <h1>Cerebrum Space</h1>
+		  <p>Hello! 歡迎來到我的作品集散地:D</p>
+		  <button id="btn-go" class="btn btn-lg">GO</button>
+		</div>
+	</section>
+	
+	<section id="aboutme">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>關於作者</h3>
+					<hr>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<img class="circle-img" src="/dist/img/170701.png" alt="">
+				</div>
+				<div class="about-content col-md-6 col-sm-6 col-xs-12 text-left">
+					<h4>Ying-Hsiu Wang (Pan)</h4>
+					<p>前端攻城屍，沒事喜歡畫畫圖、寫寫Code，</p>
+					<p>希望能持之以恆地替使用者打造舒適的畫面體驗，為自己所在的領域做出一點點貢獻。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class id="works">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>作品展示</h3>
+					<hr>
+				</div>
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>高雄師範大學-研究發展處網站</h3>
+							<p>首次接洽的網頁開發案件。</p>
+						</div>
+						<a href="http://www.nknu.edu.tw/~randd/chinese/index.html" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(1).png" alt="">
+							</div>
+						</a>
+					</div>
 
-      <div class="grid-item">
-        <a href="http://hungry.9ifriend.com/eBook/" target="_blank">
-          <div class="grid-content">
-            <h1>校園美食圖鑑</h1>
-            <p>以電子書形式呈現，南區大專院校美食指南。</p>
-          </div>
-          <img alt="校園美食圖鑑" src="./images/web/web(4).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="ShakeGame/index.html" target="_blank">
-          <div class="grid-content">
-            <h1>Make Drink 自己的飲料自己做</h1>
-            <p>選擇三種材料，創造出獨一無二的絕妙新滋味。</p>
-          </div>
-          <img alt="Make Drink" src="./images/web/web(10).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="http://www.nknu.edu.tw/~randd/EIGP/aboutUs.html" target="_blank">
-          <div class="grid-content">
-            <h1>EIGP-國際工程學程網站</h1>
-            <p>國際工程學程招生網站。</p>
-          </div>
-          <img alt="國際工程學程" src="./images/web/web(2).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="http://www.nknu.edu.tw/~randd/chinese/index.html" target="_blank">
-          <div class="grid-content">
-            <h1>高師大-研究發展處</h1>
-            <p>首次接洽的網頁開發工作。</p>
-          </div>
-          <img alt="研發處" src="./images/web/web(1).png">
-        </a>
-      </div>
-    </div>
-    
-    <div id="ExerContent" class="grid hidden">
-      <div class="grid-sizer"></div>
-      <div class="grid-item">
-        <a href="Protector/index.html" target="_blank">
-          <div class="grid-content">
-            <h1>守護地球 Canvas Game</h1>
-            <p>透過移動滑鼠來彈開襲向地球的隕石。</p>
-          </div>
-          <img alt="守護地球" src="./images/web/web(5).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="MemoPost/post.html" target="_blank">
-          <div class="grid-content">
-            <h1>POST! 網頁便利貼</h1>
-            <p>記錄每日Todo，代辦事項一目瞭然。</p>
-          </div>
-          <img alt="網站便利貼" src="./images/web/web(6).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="calculator/calculator.html" target="_blank">
-          <div class="grid-content">
-            <h1>Penguin/hTC Calculator</h1>
-            <p>透過替換CSS來改變計算機外觀。</p>
-          </div>
-          <img alt="" src="./images/web/web(7).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="lightningTalk/lightningTalk.html" target="_blank">
-          <div class="grid-content">
-            <h1>LightningTalk 計時器</h1>
-            <p>嘗試以Html5製作的web版計時器。</p>
-          </div>
-          <img alt="LightningTalk" src="./images/web/web(8).png">
-        </a>
-      </div>
-      <div class="grid-item">
-        <a href="switch/switch.html" target="_blank">
-          <div class="grid-content">
-            <h1>Switch 開關</h1>
-            <p>參考Alex Cican 製作的 Light Switch，仿製的電燈開關。</p>
-          </div>
-          <img alt="" src="./images/web/web(11).png">
-        </a>
-      </div>
-    </div>
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>POST! 網頁便利貼</h3>
+							<p>記錄每日Todo，代辦事項一目瞭然。</p>
+						</div>
+						<a href="/MemoPost" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(6).png" alt="">
+							</div>
+						</a>
+					</div>
 
-    <!-- <div id="GraphicContent" class="grid hidden">
-      <div class="grid-sizer"></div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(4).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(2).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(10).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(5).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(6).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(7).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(1).png"></a>
-      </div>
-      <div class="grid-item">
-        <div class="grid-content">
-          <h1>Title</h1>
-          <p>Description</p>
-        </div>
-        <a href="#" target="_blank"><img alt="" src="./images/pic/pic(8).png"></a>
-      </div>
-      <div class="grid-item">
-        <a href="" target="_blank"><img alt="" src="./images/pic/pic(11).png"></a>
-      </div>
-    </div>   -->
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>高雄師範大學-國際工程學程網站</h3>
+							<p>國際工程學成招生網站</p>
+						</div>
+						<a href="http://www.nknu.edu.tw/~randd/EIGP/aboutUs.html" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(2).png" alt="">
+							</div>
+						</a>
+					</div>
 
- 
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>地球守護者</h3>
+							<p>Canvas 小遊戲，透過滑鼠來彈開襲向地球的隕石。</p>
+						</div>
+						<a href="/Protector" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(5).png" alt="">
+							</div>
+						</a>
+					</div>
 
-  </main>
-  <footer class="col-xs-12 col-md-12 text-center">
-    <br>
-    <br>
-    <p>Copyright © 2016 by Ying-Hsiu</p>
-  </footer>
-  <script src="./js/main.js" charset="UTF-8"></script>
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>四/二十四</h3>
+							<p>介紹傳統24節氣的概念網站。(工事中)</p>
+						</div>
+						<a href="/season" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(12).png" alt="">
+							</div>
+						</a>
+					</div>
+
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>LightningTalk 計時器</h3>
+							<p>嘗試以Htnl5製作的Web版計時器。</p>
+						</div>
+						<a href="/lightningTalk" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(8).png" alt="">
+							</div>
+						</a>
+					</div>
+
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>Make Drink 自己的飲料自己做</h3>
+							<p>成分測試小遊戲，選擇三種材料，配出屬於自己的風味飲品:D</p>
+						</div>
+						<a href="/ShakeGame" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(10).png" alt="">
+							</div>
+						</a>
+					</div>
+
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>Penguin/hTC Calculator</h3>
+							<p>透過替換CSS來改變計算機外觀。</p>
+						</div>
+						<a href="/calculator" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(7).png" alt="">
+							</div>
+						</a>
+					</div>
+
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>Switch 開關</h3>
+							<p>參考Alex Cican 製作的 Light Switch，仿製的電燈開關。</p>
+						</div>
+						<a href="/switch" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(11).png" alt="">
+							</div>
+						</a>
+					</div>
+
+					<div class="card">
+						<div class="card-btn">
+							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+						</div>
+						<div class="card-desc">
+							<h3>紙拉門</h3>
+							<p>以純CSS製作的紙拉門效果。</p>
+						</div>
+						<a href="/door" target="_blank">
+							<div class="card-content">
+								<img src="/dist/img/web(13).png" alt="">
+							</div>
+						</a>
+					</div>
+
+					
+
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="links">
+		<div class="container text-center">
+			<div class="row">
+				<div class="item col-md-6 col-sm-6 col-xs-12">
+					<a href="https://github.com/Ying-Hsiu" target="_blank">
+						<i class="fa fa-github" aria-hidden="true"></i>
+					</a>
+				</div>
+				<div class="item col-md-6 col-sm-6 col-xs-12">
+					<a href="https://jsfiddle.net/user/cerebrum/fiddles/" target="_blank">
+						<i class="fa fa-jsfiddle" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>Copyright © 2017 by Ying-Hsiu</p>
+	</footer>
+	<script src="/dist/js/bundle.js"></script>
+
 </body>
 </html>

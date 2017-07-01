@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Roboto");
+* {
+  margin: 0 0;
+  padding: 0 0; }
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Patrick Hand SC', Microsoft JhengHei;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+header {
+  margin: 15px auto; }
+  header a {
+    padding: 0 25px;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.5s; }
+    header a:hover, header a:visited, header a:active, header a:focus {
+      text-decoration: none; }
+    header a:hover {
+      border-bottom: 3px solid #337ab7;
+      transition: border-bottom 0.5s; }
+
+.point {
+  text-align: center;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to left, rgba(127, 0, 255, 0.1), rgba(225, 0, 255, 0.1));
+  box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.01); }
+  .point p {
+    font-size: 2rem;
+    margin: 0;
+    padding-left: 5px;
+    letter-spacing: 5px;
+    color: #FFF; }
+
+.circle span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(to left, rgba(98, 111, 230, 0.1), rgba(182, 251, 255, 0.1));
+  box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.01); }
+
+.lg span {
+  top: calc(50% - 175px);
+  left: calc(50% - 150px);
+  height: 350px;
+  width: 300px; }
+
+.sm span {
+  top: calc(50% - 100px);
+  left: calc(50% - 75px);
+  height: 200px;
+  width: 150px; }
+
+.circle span {
+  animation: rotate 3s infinite linear;
+  -webkit-animation: rotate 3s infinite linear; }
+
+.circle span:nth-child(1) {
+  animation: rotate 3s infinite linear;
+  -webkit-animation: rotate 3s 1s infinite linear; }
+
+.circle span:nth-child(2) {
+  animation: rotate 3s infinite linear;
+  -webkit-animation: rotate 3s 2s infinite linear; }
+
+.circle span:nth-child(3) {
+  animation: rotate 3s infinite linear;
+  -webkit-animation: rotate 3s 3s infinite linear; }
+
+.circle.sm span {
+  animation: anti-rotate 3s infinite linear;
+  -webkit-animation: anti-rotate 3s infinite linear; }
+
+.circle.sm span:nth-child(1) {
+  animation: anti-rotate 3s infinite linear;
+  -webkit-animation: anti-rotate 3s 1s infinite linear; }
+
+.circle.sm span:nth-child(2) {
+  animation: anti-rotate 3s infinite linear;
+  -webkit-animation: anti-rotate 3s 2s infinite linear; }
+
+.circle.sm span:nth-child(3) {
+  animation: anti-rotate 3s infinite linear;
+  -webkit-animation: anti-rotate 3s 3s infinite linear; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    height: 350px; }
+  50% {
+    height: 300px; }
+  100% {
+    transform: rotate(360deg);
+    height: 350px; } }
+
+@keyframes anti-rotate {
+  0% {
+    transform: rotate(360deg);
+    height: 200px; }
+  50% {
+    height: 150px; }
+  100% {
+    transform: rotate(0deg);
+    height: 200px; } }
+
+#wave-panel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: auto 100%;
+  background-image: url("../img/reflections.jpg");
+  cursor: pointer; }
+
+.wave-container {
+  position: absolute;
+  width: 300px;
+  height: 300px; }
+
+.wave {
+  position: absolute;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/reflections.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: auto 106%;
+  border-radius: 50%;
+  animation: drop-wave 2s 1 ease-in-out;
+  -webkit-animation: drop-wave 2s 1 ease-in-out; }
+
+.wave:nth-child(1) {
+  background-size: auto 102%;
+  z-index: 1;
+  animation: drop-wave 2s 200ms 1 ease-in-out;
+  -webkit-animation: drop-wave 2s 200ms 1 ease-in-out; }
+
+.wave:nth-child(2) {
+  background-size: auto 104%;
+  z-index: 2;
+  animation: drop-wave 2s 400ms 1 ease-in-out;
+  -webkit-animation: drop-wave 2s 400ms 1 ease-in-out; }
+
+.wave:nth-child(3) {
+  background-size: auto 101%;
+  z-index: 3;
+  animation: drop-wave 2s 600ms 1 ease-in-out;
+  -webkit-animation: drop-wave 2s 600ms 1 ease-in-out; }
+
+.wave:nth-child(4) {
+  background-size: auto 102%;
+  z-index: 4;
+  animation: drop-wave 2s 800ms 1 ease-in-out;
+  -webkit-animation: drop-wave 2s 800ms 1 ease-in-out; }
+
+.wave:nth-child(5) {
+  background-size: auto 100%;
+  z-index: 5;
+  animation: drop-wave 2s 1000ms 1 ease-in-out;
+  -webkit-animation: drop-wave 2s 1000ms 1 ease-in-out; }
+
+@keyframes drop-wave {
+  0% {
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px); }
+  100% {
+    opacity: 0;
+    width: 300px;
+    height: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px); } }
+
+.door-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; }
+  .door-container .door-text {
+    position: absolute;
+    margin: 0 auto;
+    padding: 120px 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/moonnight.jpg");
+    color: #FFF; }
+    .door-container .door-text h1 {
+      font-size: 5rem; }
+    .door-container .door-text p {
+      font-size: 2rem; }
+  .door-container:hover .door-front:before {
+    left: -50vw;
+    -webkit-transition: left 2s,right 2s; }
+  .door-container:hover .door-front:after {
+    right: -50vw;
+    -webkit-transition: left 2s,right 2s; }
+  .door-container:hover .door-center:before {
+    left: -50vw;
+    -webkit-transition: left 2s 0.5s,right 2s 0.5s; }
+  .door-container:hover .door-center:after {
+    right: -50vw;
+    -webkit-transition: left 2s 0.5s,right 2s 0.5s; }
+  .door-container:hover .door-behind:before {
+    left: -50vw;
+    -webkit-transition: left 2s 1s,right 2s 1s; }
+  .door-container:hover .door-behind:after {
+    right: -50vw;
+    -webkit-transition: left 2s 1s,right 2s 1s; }
+
+.door {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; }
+  .door:before, .door:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 50vw;
+    height: 100vh; }
+  .door:before {
+    left: 0vw;
+    border-right: 15px solid #0b1013;
+    background-position: left center; }
+  .door:after {
+    right: 0vw;
+    background-position: right center;
+    border-left: 15px solid #0b1013; }
+
+.door-front:before {
+  background-color: rgba(137, 125, 85, 0.5);
+  background-image: url("../img/bamboo.jpg");
+  -webkit-transition: left 2s 1s,right 2s 1s; }
+
+.door-front:after {
+  background-color: rgba(137, 125, 85, 0.5);
+  background-image: url("../img/bamboo.jpg");
+  -webkit-transition: left 2s 1s,right 2s 1s; }
+
+.door-center:before {
+  background: #877f6c;
+  background-image: url("../img/pine.jpg");
+  -webkit-transition: left 2s 0.5s,right 2s 0.5s; }
+
+.door-center:after {
+  background: #877f6c;
+  background-image: url("../img/pine.jpg");
+  -webkit-transition: left 2s 0.5s,right 2s 0.5s; }
+
+.door-behind:before {
+  background: #b4a582;
+  background-image: url("../img/plum.jpg");
+  -webkit-transition: left 2s,right 2s; }
+
+.door-behind:after {
+  background: #b4a582;
+  background-image: url("../img/plum.jpg");
+  -webkit-transition: left 2s,right 2s; }
+
+@keyframes slider-left {
+  0% {
+    left: 0; }
+  100% {
+    left: -50vw; } }
+
+@keyframes slider-right {
+  0% {
+    right: 0; }
+  100% {
+    right: -50vw; } }
