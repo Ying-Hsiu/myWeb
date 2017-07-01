@@ -14,6 +14,9 @@
   INDEX = "";
 
   getLocal = function() {
+    if (localStorage["POSTLIST"] === void 0) {
+      localStorage["POSTLIST"] = "[]";
+    }
     return JSON.parse(localStorage["POSTLIST"]);
   };
 

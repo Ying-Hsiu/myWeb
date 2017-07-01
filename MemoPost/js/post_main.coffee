@@ -6,6 +6,8 @@ BOARD = $("#post_board")
 ID = ""
 INDEX = ""
 getLocal= ->
+	if localStorage["POSTLIST"] == undefined
+		localStorage["POSTLIST"] = "[]"
 	return JSON.parse(localStorage["POSTLIST"])
 	
 vm = new Vue(
